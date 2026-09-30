@@ -33,7 +33,6 @@ const port=process.env.PORT
 app.use(helmet());
 
 app.use(express.json());
-app.use(cors());
 app.use(limiter);
 
 // 🔒 In production:
