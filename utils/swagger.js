@@ -1,4 +1,6 @@
 import swaggerJSDoc from "swagger-jsdoc";
+import dotenv from "dotenv";
+dotenv.config()
 
 const options = {
   definition: {
@@ -10,8 +12,9 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:4000",
-      },
+        url:process.env.NODE_MODE == "development" ? "http://localhost:4000" : "https://mentorship-api-51dv.onrender.com",
+        description: "Production",
+      }
     ],
     components: {
       securitySchemes: {

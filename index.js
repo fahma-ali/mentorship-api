@@ -38,7 +38,10 @@ app.use(limiter);
 // 🔒 In production:
 app.use(
   cors({
-    origin: ["http://localhost:4000"],
+ 
+    origin:process.env.NODE_MODE == "development" ? "http://localhost:4000"
+        : "https://mentorship-api-51dv.onrender.com",
+    description: "Production",
   }),
 );
 
